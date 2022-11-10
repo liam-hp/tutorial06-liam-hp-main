@@ -26,26 +26,25 @@ async function manageVisualizations(){
   scroll.on("section-change", (section)=>{
     switch(section){
       case 0:
-        console.log("gloom bar");
+        //console.log("gloom bar");
         barchart.transition().attr("opacity", 1).duration(speed);
         histogram.transition().attr("opacity", 0).duration(speed);
-        
         break;
       case 1:
-        console.log("valence histogram");
+        //console.log("valence histogram");
         barchart.transition().attr("opacity", 0).duration(speed);
         drawHistogram(histogram, data, "valence", "Valence", size, speed)
         break;
       case 2:
-        console.log("sad histogram");
+        //console.log("sad histogram");
         drawHistogram(histogram, data, "pct_sad", "Percentage of the song with sad lyrics", size, speed)
         break;
       case 3:
-        console.log("gloom histogram");
+        //console.log("gloom histogram");
         drawHistogram(histogram, data, "gloom_index", "Gloom Index", size, speed)
         break;
       default:
-        console.log("uh");
+        //console.log("uh");
     }
   });
   
