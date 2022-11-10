@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>Narrative Visualization</title>
+      <script src="https://d3js.org/d3.v7.min.js"></script>
+      <link rel="stylesheet" href="style/scroller.css" /> 
+  </head>
+  <body>
+    <main>
+      <div id="content">
+     
+     
+      <div id="sections">
+        <section>
+          <h2>Exit Music (For a Band)</h2>
+          <div class="card">
+          <p>It seems plausible that Radiohead's A Moon Shaped Pool could be their last album. If so, they exit on a sad note, with an album full of sad songs.</p>
+
+          <p>Using Charlie Thompson's <a href="http://web.archive.org/web/20210929032419/https://www.rcharlie.com/blog/fitter-happier/">gloom index</a>(the lower the value, the gloomier the song), we can look at the average gloominess of their albums. We can see that after a collection of albums that were increasingly more positive, A Moon Shaped Pool plunged back down to be the gloomiest overall Radiohead album.</p>
+        </div>
+          </section>
+          <section>
+            <div class="card">
+            <p>The gloom index is made up of several pieces. One of those is the <em>valence</em> of their songs. The valence is a measure of a song's affect. The higher the valence, the "happier" the sound. We can see that the bulk of their songs are below 50%.</p>
+          </div>
+          </section>
+
+        <section>
+          <div class="card">
+          <p>The other component of a song that makes them downbeat is the lyrics. In this graph we are looking at the percentage of the song's lyrics that are "sad". Curiously, the bulk of their lyrics are not classified as sad. </p>
+          <p>More than anything, this hints at the difficulty of looking at the affect of a song based on an analysis of individual words in the lyrics. "Burn the Witch" starts <em>stay in the shadows ,cheer at the gallows, this is a round up, this is a low flying panic attack</em>. Taken individually, most of the words are not particularly sad (the song is classed as having 8.51% sad words), but this is not feel good, summer anthem material. </p>
+          </div>
+        </section>
+        <section>
+          <div class="card">
+          <p>To partially address this, the gloom index scales the percentage of sad songs by the <em>lyric density</em> (the number of lyrics over the length of the track). The value is calculated as (1 - valence) + (percent sad lyrics) * (1 + lyrical density), all divided by 2. The whole thing is then scaled so that the happiest song is at the top of the scale (100) and the saddest song is at the bottom (0).</p>
+
+          <p>Looking at the distribution of songs, we can see that the songs are not evenly distributed, with many of their songs ending up on the gloomier end of the spectrum. (And we must bear in mind that these are all in relation to the happiest <em>Radiohead</em> song...)</p>
+          
+          <p>So if Radiohead has to go out, it seems appropriate that they would go out on a sad note. At least some of them have left us something to <a href="https://thesmiletheband.com/">Smile</a> about...</p>
+      </div>
+        </section>
+      </div>
+
+      <div id="vis"></div>
+    </div>
+    </main>
+  </body>
+
+
+  <script src="js/scroller.js"></script>
+  <script src="js/visualization.js"></script>
+
+</html>
